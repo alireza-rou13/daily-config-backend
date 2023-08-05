@@ -9,3 +9,10 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model config {
+  id       String @id @default(uuid())
+  conf_str String @unique
+
+  cat DateTime @default(now())
+}
